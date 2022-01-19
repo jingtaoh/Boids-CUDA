@@ -21,7 +21,7 @@
 
 GLuint positionLocation = 0;   // Match results from glslUtility::createProgram.
 GLuint velocitiesLocation = 1; // Also see attribtueLocations below.
-const char *attributeLocations[] = { "Position", "Velocity" };
+const char* attributeLocations[] = { "Position", "Velocity" };
 
 GLuint boidVAO = 0;
 GLuint boidVBO_positions = 0;
@@ -32,7 +32,7 @@ GLuint program[2];
 
 const unsigned int PROG_BOID = 0;
 
-const float fovy = (float) (PI / 4);
+const float fovy = (float)(PI / 4);
 const float zNear = 0.10f;
 const float zFar = 10.0f;
 // LOOK-1.2: for high DPI displays, you may want to double these settings.
@@ -57,7 +57,7 @@ glm::mat4 projection;
 // Main
 //====================================
 
-const char *projectName;
+const char* projectName;
 
 int main(int argc, char* argv[]);
 
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]);
 // Main loop
 //====================================
 void mainLoop();
-void errorCallback(int error, const char *description);
+void errorCallback(int error, const char* description);
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 void mousePositionCallback(GLFWwindow* window, double xpos, double ypos);
@@ -75,6 +75,6 @@ void runCUDA();
 //====================================
 // Setup/init Stuff
 //====================================
-bool init(int argc, char **argv);
+bool init(int argc, char** argv);
 void initVAO();
-void initShaders(GLuint *program);
+void initShaders(GLuint* program);
