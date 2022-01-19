@@ -1,11 +1,16 @@
-**University of Pennsylvania, CIS 565: GPU Programming and Architecture,
-Project 1 - Flocking**
+# Boids
 
-* (TODO) YOUR NAME HERE
-  * (TODO) [LinkedIn](), [personal website](), [twitter](), etc.
-* Tested on: (TODO) Windows 22, i7-2222 @ 2.22GHz 22GB, GTX 222 222MB (Moore 2222 Lab)
+Flocking simulation using CUDA based on Reynolds Boids Algorithm, along with two levels of optimiation: uniform grid and uniform grid with semi-coherent memory access. 
+- Tested on: Windows 10, Intel(R) Xeon(R) CPU E5-2667 v3 @ 3.20GHz, NVIDIA Quadro P5000
 
-### (TODO: Your README)
+## Implementation
 
-Include screenshots, analysis, etc. (Remember, this is public, so don't put
-anything here that you don't want to share with the world.)
+### Naive Boids Simulation
+
+### Uniform Grid
+
+### Semi-Coherent Uniform Grid
+
+## Performance Analysis
+
+## Renferences
