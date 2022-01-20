@@ -10,56 +10,59 @@ Flocking simulation using CUDA based on Reynolds Boids Algorithm, along with two
 In the Boids flocking simulation, particles representing birds or fish (boids) move around the simulation space according to three rules:
 
 1. cohesion - boids move towards the perceived center of mass of their neighbors
-```
-function rule1(Boid boid)
-
-    Vector perceived_center
-
-    foreach Boid b:
-        if b != boid and distance(b, boid) < rule1Distance then
-            perceived_center += b.position
-        endif
+    ```
+    function rule1(Boid boid)
+    
+        Vector perceived_center
+    
+        fore:ach Boid b:
+            if b != boid and distance(b, boid) < rule1Distance then
+                perceived_center += b.position
+            endif
+        end
+    
+        perceived_center /= number_of_neighbors
+    
+        return (perceived_center - boid.position) * rule1Scale
     end
-
-    perceived_center /= number_of_neighbors
-
-    return (perceived_center - boid.position) * rule1Scale
-end
-```
+    ```
+    ![cohesion](images/cohesion.gif)
 2. separation - boids avoid getting too close to their neighbors
-```
-function rule1(Boid boid)
-
-    Vector perceived_center
-
-    foreach Boid b:
-        if b != boid and distance(b, boid) < rule1Distance then
-            perceived_center += b.position
-        endif
+    ```
+    function rule1(Boid boid)
+    
+        Vector perceived_center
+    
+        foreach Boid b:
+            if b != boid and distance(b, boid) < rule1Distance then
+                perceived_center += b.position
+            endif
+        end
+    
+        perceived_center /= number_of_neighbors
+    
+        return (perceived_center - boid.position) * rule1Scale
     end
-
-    perceived_center /= number_of_neighbors
-
-    return (perceived_center - boid.position) * rule1Scale
-end
-```
+    ```
+    ![cohesion + separation](images/cohesion-separation.gif)
 3. alignment - boids generally try to move with the same direction and speed as their neighbors
-```
-function rule3(Boid boid)
-
-    Vector perceived_velocity
-
-    foreach Boid b
-        if b != boid and distance(b, boid) < rule3Distance then
-            perceived_velocity += b.velocity
-        endif
+    ```
+    function rule3(Boid boid)
+    
+        Vector perceived_velocity
+    
+        foreach Boid b
+            if b != boid and distance(b, boid) < rule3Distance then
+                perceived_velocity += b.velocity
+            endif
+        end
+    
+        perceived_velocity /= number_of_neighbors
+    
+        return perceived_velocity * rule3Scale
     end
-
-    perceived_velocity /= number_of_neighbors
-
-    return perceived_velocity * rule3Scale
-end
-```
+    ```
+    ![cohesion + separation + alignment](images/naive.gif)
 
 ### Uniform Grid
 
